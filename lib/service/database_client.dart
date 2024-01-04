@@ -24,8 +24,21 @@ class DatabaseClient {
         ''');
       },
     );
-
-    
-
   }
+  Future<void> insert() {
+    return _database.insert('note', {
+      'title' : 'test',
+      'content' : 'content',
+      'date' : '2024-01-04',
+    });
+  }
+
+  Future<void> getDatasWithData(String data){
+    return _database.query(
+      'note',
+      where:'date = ?',
+      whereArgs: [date],
+    );
+  }
+
 }

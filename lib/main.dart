@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await DatabaseClient.instance.initializeDatabase();
+  
   runApp(const MainApp());
 }
 
