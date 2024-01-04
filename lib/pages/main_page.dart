@@ -49,7 +49,12 @@ class MainPage extends StatelessWidget{//stl
         ],
       ),
       floatingActionButton:  FloatingActionButton(
-        onPressed:() => Get.toNamed('/add'),
+        onPressed:() => Get.toNamed(
+          '/add',
+          arguments: '2024-01-04',
+          )?.then((value) {
+            setState(() {});
+          }),
             child: const Icon(Icons.add),
       ),
     );

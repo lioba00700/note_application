@@ -26,7 +26,7 @@ class DatabaseClient {
       },
     );
   }
-  Future<void> insert() {
+  Future<void> insert({required String title, required String content, required String date}) {
     return _database.insert('note', {
       'title' : 'test',
       'content' : 'content',

@@ -12,7 +12,7 @@ class NotePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(
-          child: Text('내용' * 100000),
+          child: Text('내용 ' * 100000),
         ),
         ),
     );

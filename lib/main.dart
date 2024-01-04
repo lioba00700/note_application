@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
           name: '/', page: () => const MainPage(),
         ),
         GetPage(
-          name: '/add', page: () => const AppPage(),
+          name: '/add', page: () => AppPage(),
         ),
         GetPage(
           name: '/view', page: () => const NotePage(),
