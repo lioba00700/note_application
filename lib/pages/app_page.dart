@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_5/service/database_client.dart';
 
 class AppPage extends StatelessWidget {
   const AppPage({super.key});
@@ -8,10 +9,10 @@ class AppPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('추가'),
-        actions: const [
+        actions: [
           TextButton(
-            onPressed: null, 
-            child: Text('추가'),
+            onPressed: () => DatabaseClient.instance.insert(), 
+            child: const Text('추가'),
           ),
         ],
       ),
@@ -32,10 +33,11 @@ class AppPage extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
               maxLines: null,
+              ),
             ),
-            )
           ],
-        ),),
+        ),
+      ),
     );
   }
 }
