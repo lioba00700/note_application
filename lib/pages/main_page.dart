@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:flutter_application_5/pages/app_page.dart";
+
 
 class MainPage extends StatelessWidget{//stl
   const MainPage({super.key});
@@ -32,7 +34,14 @@ class MainPage extends StatelessWidget{//stl
           )
         ],
       ),
-      floatingActionButton: const FloatingActionButton(onPressed: null,child: Icon(Icons.add),
+      floatingActionButton:  FloatingActionButton(
+        onPressed:() => Navigator.push(
+          context, 
+          MaterialPageRoute(
+            builder: (context) => const AppPage(),
+            ),
+        ),
+            child: const Icon(Icons.add),
       ),
     );
   }
