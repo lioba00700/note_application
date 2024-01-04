@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_5/pages/app_page.dart';
 import 'package:flutter_application_5/pages/main_page.dart';
 import 'package:flutter_application_5/pages/note_page.dart';
+import 'package:flutter_application_5/service/database_client.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await DatabaseClient.instance.initializeDatabase();
   runApp(const MainApp());
 }
 
