@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import "package:flutter_application_5/pages/app_page.dart";
+
+import "package:get/get.dart";
 
 
 class MainPage extends StatelessWidget{//stl
@@ -22,11 +23,15 @@ class MainPage extends StatelessWidget{//stl
           Expanded(
           child: Padding(padding: const EdgeInsets.all(10.0),
           child: ListView.builder(
-            itemBuilder:(context,index) =>  ListTile(
+            itemBuilder:(context,index) =>  Card(
+            child: ListTile(
             title: Text('$index'),
-            trailing: IconButton(onPressed: null,
-            icon: Icon(Icons.delete),
+            trailing: const IconButton(
+              onPressed: null,
+              icon: Icon(Icons.delete),
               ),
+              onTap: () => Get.toNamed('/view'),
+            ),
             ),
           itemCount: 100,
           ),
@@ -35,12 +40,7 @@ class MainPage extends StatelessWidget{//stl
         ],
       ),
       floatingActionButton:  FloatingActionButton(
-        onPressed:() => Navigator.push(
-          context, 
-          MaterialPageRoute(
-            builder: (context) => const AppPage(),
-            ),
-        ),
+        onPressed:() => Get.toNamed('/add'),
             child: const Icon(Icons.add),
       ),
     );

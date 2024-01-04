@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_5/pages/app_page.dart';
 import 'package:flutter_application_5/pages/main_page.dart';
+import 'package:flutter_application_5/pages/note_page.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -17,10 +19,10 @@ class MainApp extends StatelessWidget {
           name: '/', page: () => const MainPage(),
         ),
         GetPage(
-          name: 'add', page: () => const MainPage(),
+          name: '/add', page: () => const AppPage(),
         ),
         GetPage(
-          name: 'view', page: () => const MainPage(),
+          name: '/view', page: () => const NotePage(),
         ),
       ],
       initialRoute: '/',
