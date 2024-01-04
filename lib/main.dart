@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_5/pages/main_page.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MainPage(),
+    return GetMaterialApp(
+      getPages: [
+        GetPage(
+          name: '/', page: () => const MainPage(),
+        ),
+        GetPage(
+          name: 'add', page: () => const MainPage(),
+        ),
+        GetPage(
+          name: 'view', page: () => const MainPage(),
+        ),
+      ],
+      initialRoute: '/',
     );
   }
 }
