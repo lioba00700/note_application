@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_5/service/database_client.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class AppPage extends StatelessWidget {
-  const AppPage({super.key});
+  String _title = '', _content = '';
+
+  AppPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +15,8 @@ class AppPage extends StatelessWidget {
         title: const Text('추가'),
         actions: [
           TextButton(
-            onPressed: () => DatabaseClient.instance.insert(
+            onPressed: () => DatabaseClient.instance
+            .insert(
               title: _title,
               content: _content,
               date: Get.arguments as String,
@@ -22,21 +26,21 @@ class AppPage extends StatelessWidget {
           ),
         ],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(10.0),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
             TextField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: '제목',
               ),
               onChanged: (value) => _title = value,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Expanded(
             child: TextField(
               onChanged: (value) => _content = value,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: '내용',
                 border: OutlineInputBorder(),
               ),

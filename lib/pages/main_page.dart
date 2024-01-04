@@ -2,10 +2,14 @@ import "package:flutter/material.dart";
 import 'package:flutter_application_5/service/database_client.dart';
 import "package:get/get.dart";
 
-
-class MainPage extends StatelessWidget{//stl
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {//stl
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -32,9 +36,15 @@ class MainPage extends StatelessWidget{//stl
                 itemBuilder:(context,index) =>  Card(
                   child: ListTile(
                     title: Text('${data[index]['title']}'),
-                    trailing: const IconButton(
-                      onPressed: null,
-                      icon: Icon(Icons.delete),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: () => DatabaseClient.instance
+                        .deleteNote(
+                        data[index]['id'],
+                      )
+                        .then((value) {
+                        setState(() {});
+                      }),
                     ),
                     onTap: () => Get.toNamed('/view'),
                   ),

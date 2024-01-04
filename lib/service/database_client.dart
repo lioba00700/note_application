@@ -26,7 +26,11 @@ class DatabaseClient {
       },
     );
   }
-  Future<void> insert({required String title, required String content, required String date}) {
+  Future<void> insert({
+    required String title, 
+    required String content, 
+    required String date,
+    }) {
     return _database.insert('note', {
       'title' : 'test',
       'content' : 'content',
@@ -40,5 +44,13 @@ class DatabaseClient {
       where:'date = ?',
       whereArgs: [date],
     );
+  }
+
+  Future<void> deleteNote(int id){
+    return _database.delete(
+      'note',
+      where: 'id = ?',
+      whereArgs: [id],
+      );
   }
 }
