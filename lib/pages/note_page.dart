@@ -14,7 +14,7 @@ class NotePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Text('내용 ' * 100000),
         ),
-        ),
+      ),
     );
   }
 }

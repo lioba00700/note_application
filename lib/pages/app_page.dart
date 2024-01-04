@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_5/service/database_client.dart';
 import 'package:get/get.dart';
+import 'package:flutter_application_5/service/database_client.dart';
 
 // ignore: must_be_immutable
 class AppPage extends StatelessWidget {

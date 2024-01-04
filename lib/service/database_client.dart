@@ -32,9 +32,9 @@ class DatabaseClient {
     required String date,
     }) {
     return _database.insert('note', {
-      'title' : 'test',
-      'content' : 'content',
-      'date' : '2024-01-04',
+      'title' : title,
+      'content' : content,
+      'date' : date,
     });
   }
 
